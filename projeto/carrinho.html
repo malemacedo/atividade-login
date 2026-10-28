@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEY JR STORE - Loja digital de jogos. Projeto acadêmico com Supabase.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <title>Carrinho - NEY JR STORE</title>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <a class="logo" href="index.html">NEY <span>JR</span> STORE</a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Início</a>
+      <a href="jogos.html">Jogos</a>
+      <a href="index.html#categorias">Categorias</a>
+      <a href="jogos.html?ofertas=1">Ofertas</a>
+      <a href="index.html#sobre">Sobre</a>
+    </nav>
+    <form class="search-form" action="jogos.html" method="get" role="search">
+      <input type="search" name="busca" placeholder="Pesquisar jogos..." aria-label="Pesquisar jogos">
+    </form>
+    <div class="header-acoes">
+      <a class="cart-btn" href="carrinho.html" aria-label="Carrinho de compras">&#128722;<span id="cart-count">0</span></a>
+      <div class="user-area" id="user-area"><a class="btn btn-primary btn-sm" href="login.html">Entrar</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="secao">
+    <div class="container">
+      <h2 class="titulo-secao">Meu <span>carrinho</span></h2>
+      <p class="subtitulo-secao">Revise os jogos antes de finalizar o pedido.</p>
+
+      <div id="carrinho-vazio" class="estado-vazio oculto">
+        <p>Seu carrinho está vazio.</p>
+        <p style="margin-top:.8rem"><a class="btn btn-primary" href="jogos.html">Explorar jogos</a></p>
+      </div>
+
+      <div id="lista-carrinho"></div>
+
+      <div id="resumo-carrinho" class="resumo-carrinho oculto">
+        <div class="total">Total: <span id="cart-total">R$ 0,00</span></div>
+        <div class="resumo-acoes">
+          <button class="btn btn-outline" onclick="limparCarrinho()">Limpar carrinho</button>
+          <button class="btn btn-primary" onclick="finalizarPedido()">Finalizar pedido</button>
+        </div>
+      </div>
+      <p class="nota-simulacao">Compra simulada — projeto acadêmico. Nenhuma cobrança é realizada.</p>
+
+      <div id="pedido-sucesso" class="pedido-sucesso oculto">
+        Pedido realizado com sucesso! Obrigado por comprar na NEY JR STORE. (Compra simulada — projeto acadêmico.)
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html">NEY <span>JR</span> STORE</a>
+        <p style="margin-top:.6rem">Sua loja digital de jogos: grandes aventuras, clássicos inesquecíveis e as melhores ofertas em um só lugar.</p>
+        <p class="nota-simulacao">Projeto acadêmico — as compras são simuladas e os preços exibidos são fictícios.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
+          <li><a href="jogos.html?ofertas=1">Ofertas</a></li>
+          <li><a href="carrinho.html">Carrinho</a></li>
+          <li><a href="admin.html">Painel admin</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="jogos.html?categoria=Ação">Ação</a></li>
+          <li><a href="jogos.html?categoria=Esportes">Esportes</a></li>
+          <li><a href="jogos.html?categoria=Terror">Terror</a></li>
+          <li><a href="jogos.html?categoria=Battle Royale">Battle Royale</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; <span id="ano-atual"></span> NEY JR STORE &mdash; Projeto acadêmico desenvolvido com HTML, CSS, JavaScript e Supabase.</div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/carrinho.js"></script>
+<script src="js/jogos.js"></script>
+<script src="js/app.js"></script>
+<script>document.addEventListener('DOMContentLoaded', renderCarrinho);</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEY JR STORE - Loja digital de jogos. Projeto acadêmico com Supabase.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <title>Jogos - NEY JR STORE</title>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    <a class="logo" href="index.html">NEY <span>JR</span> STORE</a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Início</a>
+      <a href="jogos.html">Jogos</a>
+      <a href="index.html#categorias">Categorias</a>
+      <a href="jogos.html?ofertas=1">Ofertas</a>
+      <a href="index.html#sobre">Sobre</a>
+    </nav>
+    <form class="search-form" action="jogos.html" method="get" role="search">
+      <input type="search" name="busca" placeholder="Pesquisar jogos..." aria-label="Pesquisar jogos">
+    </form>
+    <div class="header-acoes">
+      <a class="cart-btn" href="carrinho.html" aria-label="Carrinho de compras">&#128722;<span id="cart-count">0</span></a>
+      <div class="user-area" id="user-area"><a class="btn btn-primary btn-sm" href="login.html">Entrar</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="secao">
+    <div class="container">
+      <h2 class="titulo-secao">Catálogo de <span>jogos</span></h2>
+      <p class="subtitulo-secao">Pesquise e filtre os jogos do nosso catálogo.</p>
+
+      <form class="filtros-barra" id="filtros-form">
+        <div class="campo">
+          <label for="filtro-busca">Pesquisar</label>
+          <input type="search" id="filtro-busca" placeholder="Ex.: minecraft">
+        </div>
+        <div class="campo">
+          <label for="filtro-categoria">Categoria</label>
+          <select id="filtro-categoria">
+            <option value="">Todas</option>
+            <option>Ação</option>
+            <option>Aventura</option>
+            <option>RPG</option>
+            <option>Esportes</option>
+            <option>Terror</option>
+            <option>Simulação</option>
+            <option>Indie</option>
+            <option>Battle Royale</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="filtro-plataforma">Plataforma</label>
+          <select id="filtro-plataforma">
+            <option value="">Todas</option>
+            <option>PC</option>
+            <option>PlayStation</option>
+            <option>Xbox</option>
+            <option>Nintendo</option>
+            <option>Multiplataforma</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="filtro-faixa">Faixa de preço</label>
+          <select id="filtro-faixa">
+            <option value="">Todas</option>
+            <option value="gratis">Grátis</option>
+            <option value="ate50">Até R$ 50</option>
+            <option value="50a100">R$ 50 a R$ 100</option>
+            <option value="acima100">Acima de R$ 100</option>
+          </select>
+        </div>
+        <label class="check-ofertas">
+          <input type="checkbox" id="filtro-ofertas"> Somente ofertas
+        </label>
+      </form>
+
+      <div class="games-grid" id="grade-jogos">
+        <div class="estado-vazio"><p>Carregando jogos...</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html">NEY <span>JR</span> STORE</a>
+        <p style="margin-top:.6rem">Sua loja digital de jogos: grandes aventuras, clássicos inesquecíveis e as melhores ofertas em um só lugar.</p>
+        <p class="nota-simulacao">Projeto acadêmico — as compras são simuladas e os preços exibidos são fictícios.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
+          <li><a href="jogos.html?ofertas=1">Ofertas</a></li>
+          <li><a href="carrinho.html">Carrinho</a></li>
+          <li><a href="admin.html">Painel admin</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="jogos.html?categoria=Ação">Ação</a></li>
+          <li><a href="jogos.html?categoria=Esportes">Esportes</a></li>
+          <li><a href="jogos.html?categoria=Terror">Terror</a></li>
+          <li><a href="jogos.html?categoria=Battle Royale">Battle Royale</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; <span id="ano-atual"></span> NEY JR STORE &mdash; Projeto acadêmico desenvolvido com HTML, CSS, JavaScript e Supabase.</div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/carrinho.js"></script>
+<script src="js/jogos.js"></script>
+<script src="js/app.js"></script>
+<script>document.addEventListener('DOMContentLoaded', initCatalogo);</script>
+</body>
+</html>

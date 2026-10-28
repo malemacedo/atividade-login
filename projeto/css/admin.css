@@ -1,0 +1,161 @@
+/* ============================================================
+   NEY JR STORE - Estilos do Painel Administrativo
+   ============================================================ */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: linear-gradient(160deg, var(--cinza-card), #180f2e);
+    border: 1px solid var(--cinza-borda);
+    border-radius: var(--raio);
+    padding: 1.3rem;
+}
+
+.stat-card .numero { font-size: 2rem; font-weight: 900; color: var(--roxo-claro); }
+.stat-card .rotulo { color: var(--texto-cinza); font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+.admin-barra {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.admin-barra input {
+    flex: 1;
+    min-width: 220px;
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 8px;
+    color: var(--texto);
+    padding: .6rem .9rem;
+    outline: none;
+}
+
+.admin-barra input:focus { border-color: var(--roxo); }
+
+.admin-tabela-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--cinza-borda);
+    border-radius: var(--raio);
+}
+
+.admin-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+    background: var(--cinza-card);
+}
+
+.admin-tabela th {
+    text-align: left;
+    padding: .8rem 1rem;
+    color: var(--texto-cinza);
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--cinza-borda);
+}
+
+.admin-tabela td {
+    padding: .7rem 1rem;
+    border-bottom: 1px solid var(--cinza-borda);
+    font-size: .9rem;
+    vertical-align: middle;
+}
+
+.admin-tabela tr:last-child td { border-bottom: none; }
+.admin-tabela tbody tr:hover { background: rgba(124, 58, 237, .06); }
+
+.admin-thumb {
+    width: 90px;
+    aspect-ratio: 460 / 215;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.admin-acoes { display: flex; gap: .5rem; }
+
+.tag {
+    display: inline-block;
+    padding: .2rem .6rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 700;
+    background: var(--cinza-escuro);
+    color: var(--texto-cinza);
+}
+
+.tag-ok { background: rgba(34, 197, 94, .15); color: var(--sucesso); }
+.tag-off { background: rgba(239, 68, 68, .15); color: var(--perigo); }
+.tag-roxo { background: rgba(124, 58, 237, .18); color: var(--roxo-claro); }
+
+/* Overlay do formulario */
+.form-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 1rem;
+}
+
+.form-modal {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 16px;
+    padding: 1.8rem;
+    width: min(640px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--sombra);
+}
+
+.form-modal h2 { margin-bottom: 1.4rem; font-size: 1.3rem; }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .9rem;
+}
+
+.form-grid .campo-full { grid-column: 1 / -1; }
+
+.form-modal form { display: contents; }
+
+.form-checks {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1.6rem;
+    padding: .4rem 0;
+}
+
+.form-checks label { display: flex; align-items: center; gap: .45rem; cursor: pointer; }
+
+.form-botoes {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: .8rem;
+    justify-content: flex-end;
+    margin-top: .6rem;
+}
+
+.acesso-negado {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.acesso-negado h1 { margin-bottom: .6rem; }
+.acesso-negado p { color: var(--texto-cinza); margin-bottom: 1.4rem; }
+
+@media (max-width: 640px) {
+    .form-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,52 @@
+/* ============================================================
+   NEY JR STORE - Responsividade (tablet e smartphone)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .filtros-barra { grid-template-columns: 1fr 1fr; }
+    .detalhe-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .header-inner { flex-wrap: wrap; }
+
+    .menu-toggle { display: block; order: -1; }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--cinza-card);
+        border: 1px solid var(--cinza-borda);
+        border-radius: var(--raio);
+        padding: .8rem;
+        order: 5;
+    }
+
+    .main-nav.aberto { display: flex; }
+    .main-nav a { padding: .55rem .4rem; }
+
+    .search-form { order: 4; max-width: none; width: 100%; margin-left: 0; }
+    .header-acoes { margin-left: auto; }
+
+    .hero { padding: 4rem 0; }
+
+    .cart-item { grid-template-columns: 100px 1fr; }
+    .cart-item-qty { grid-column: 1; }
+    .cart-item-sub { grid-column: 2; justify-self: end; }
+    .cart-item .btn-danger { grid-column: 1 / -1; }
+
+    .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .filtros-barra { grid-template-columns: 1fr; }
+    .games-grid { grid-template-columns: 1fr; }
+    .categorias-grid { grid-template-columns: 1fr 1fr; }
+    .resumo-carrinho { flex-direction: column; align-items: stretch; text-align: center; }
+    .resumo-acoes { flex-direction: column; }
+    .hero-acoes .btn { width: 100%; }
+    .game-actions { flex-direction: column; }
+    .auth-card { padding: 1.6rem; }
+}
